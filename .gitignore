@@ -1,0 +1,19 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+
+# Generated documents
+generated/
+*.pdf
+*.docx
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

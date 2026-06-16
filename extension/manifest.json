@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Job Application Assistant",
+  "version": "0.1.0",
+  "description": "Create review-ready resume and cover letter drafts from job pages.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+  "https://www.linkedin.com/*",
+  "http://localhost:8000/*"
+],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/jobs/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
