@@ -65,6 +65,7 @@ Contributions, feedback, and ideas are welcome.
 
 
 ------------------------Disclaimer-------------------------------
+
 This project generates draft application materials for review.
 Users should validate all generated content before submitting applications.
 
