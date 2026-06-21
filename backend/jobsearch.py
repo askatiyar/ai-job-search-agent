@@ -2,7 +2,7 @@ from pathlib import Path
 from datetime import datetime
 import os
 import re
-import subprocess
+#import subprocess
 
 from dotenv import load_dotenv
 from fastapi import FastAPI
@@ -39,21 +39,21 @@ class JobData(BaseModel):
     company: str = ""
     description: str = ""
 
-def convert_docx_to_pdf(docx_path: Path) -> Path:
-    subprocess.run(
-        [
-            "/Applications/LibreOffice.app/Contents/MacOS/soffice",
-            "--headless",
-            "--convert-to",
-            "pdf",
-            "--outdir",
-            str(docx_path.parent),
-            str(docx_path),
-        ],
-        check=True,
-    )
-
-    return docx_path.with_suffix(".pdf")
+# def convert_docx_to_pdf(docx_path: Path) -> Path:
+#     subprocess.run(
+#         [
+#             "/Applications/LibreOffice.app/Contents/MacOS/soffice",
+#             "--headless",
+#             "--convert-to",
+#             "pdf",
+#             "--outdir",
+#             str(docx_path.parent),
+#             str(docx_path),
+#         ],
+#         check=True,
+#     )
+# 
+#     return docx_path.with_suffix(".pdf")
 
 def sanitize_filename_part(text: str) -> str:
     text = text or ""
@@ -268,16 +268,16 @@ JOB DESCRIPTION:
         match_analysis
     )
     
-    analysis_pdf_path = convert_docx_to_pdf(analysis_path)
-    resume_pdf_path = convert_docx_to_pdf(resume_path)
-    cover_pdf_path = convert_docx_to_pdf(cover_path)
+#    analysis_pdf_path = convert_docx_to_pdf(analysis_path)
+ #   resume_pdf_path = convert_docx_to_pdf(resume_path)
+  #  cover_pdf_path = convert_docx_to_pdf(cover_path)
     
     return {
         "matchAnalysisUrl": f"http://localhost:8000/generated/{analysis_filename}",
-        "matchAnalysisPdfUrl": f"http://localhost:8000/generated/{analysis_pdf_path.name}",
+   #     "matchAnalysisPdfUrl": f"http://localhost:8000/generated/{analysis_pdf_path.name}",
         "resumeUrl": f"http://localhost:8000/generated/{resume_filename}",
-        "resumePdfUrl": f"http://localhost:8000/generated/{resume_pdf_path.name}",
+#     "resumePdfUrl": f"http://localhost:8000/generated/{resume_pdf_path.name}",
         "coverLetterUrl": f"http://localhost:8000/generated/{cover_filename}",
-        "coverLetterPdfUrl": f"http://localhost:8000/generated/{cover_pdf_path.name}",
+     #   "coverLetterPdfUrl": f"http://localhost:8000/generated/{cover_pdf_path.name}",
     }    
      

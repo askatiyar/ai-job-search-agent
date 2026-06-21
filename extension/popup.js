@@ -20,12 +20,10 @@ console.log("Sending to backend:", jobData);
 
   const result = await response.json();
 
-status.textContent =
-  `Done!
-Match analysis: ${result.matchAnalysisUrl}
-Match analysis PDF: ${result.matchAnalysisPdfUrl}
-Resume: ${result.resumeUrl}
-Resume PDF: ${result.resumePdfUrl}
-Cover letter: ${result.coverLetterUrl}
-Cover letter PDF: ${result.coverLetterPdfUrl}`;
+status.innerHTML = `
+<b>Done!</b><br><br>
+<a href="${result.matchAnalysisUrl}" target="_blank">Match Analysis</a><br>
+<a href="${result.resumeUrl}" target="_blank">Resume</a><br>
+<a href="${result.coverLetterUrl}" target="_blank">Cover Letter</a>
+`;
 });
