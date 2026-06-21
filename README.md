@@ -62,5 +62,8 @@ This project demonstrates practical applications of:
 * Multi-Resume Support
 
 Contributions, feedback, and ideas are welcome.
+------------------------Disclaimer-------------------------------
+This project generates draft application materials for review.
+Users should validate all generated content before submitting applications.
 
 ⭐ If you find this useful, please star the repository.
